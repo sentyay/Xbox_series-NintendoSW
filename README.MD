@@ -38,7 +38,7 @@ ESP32-S3 выполняет роль BLE-моста и USB HID-устройст�
 
 ### 🖼️ Фото платы ESP32-S3 DevKitC-1
 <p align="center">
-  <img src="https://m.media-amazon.com/images/I/71ZT8X8nEPL._AC_.jpg" alt="ESP32-S3 DevKitC-1" width="500"/>
+  <img src="https://github.com/sentyay/Xbox_series-NintendoSW/raw/main/images/esp32s3.jpg" alt="ESP32-S3 DevKitC-1" width="500"/>
 </p>
 
 ---
