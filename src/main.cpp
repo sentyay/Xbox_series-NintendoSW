@@ -49,20 +49,24 @@ void sendXbox360Report(const XboxControllerNotificationParser &notif)
   uint16_t buttons = 0;
   if (notif.btnA)
     buttons |= (1 << 0); //A
+    //buttons |= (1 << 1); //A
   if (notif.btnB)
     buttons |= (1 << 1); //B
+    //buttons |= (1 << 0); //B
   if (notif.btnX)
     buttons |= (1 << 3); //X
+    //buttons |= (1 << 4); //X
   if (notif.btnY)
     buttons |= (1 << 4); //Y
+    //buttons |= (1 << 3); //Y
   if (notif.btnLB)
     buttons |= (1 << 6); //LB
   if (notif.btnRB)
     buttons |= (1 << 7); //RB
   if (notif.trigLT > 0)
-    buttons |= (1 << 13); // LT
+    buttons |= (1 << 8); // LT
   if (notif.trigRT > 0)
-    buttons |= (1 << 14); // RT
+    buttons |= (1 << 9); // RT
   if (notif.btnSelect)
     buttons |= (1 << 10); // Select
   if (notif.btnStart)
