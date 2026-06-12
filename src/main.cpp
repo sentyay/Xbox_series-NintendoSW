@@ -48,32 +48,33 @@ void sendXbox360Report(const XboxControllerNotificationParser &notif)
 
   uint16_t buttons = 0;
   if (notif.btnA)
-    buttons |= (1 << 0);
+    buttons |= (1 << 0); //A
   if (notif.btnB)
-    buttons |= (1 << 1);
+    buttons |= (1 << 1); //B
   if (notif.btnX)
-    buttons |= (1 << 3);
+    buttons |= (1 << 3); //X
   if (notif.btnY)
-    buttons |= (1 << 2);
+    buttons |= (1 << 4); //Y
   if (notif.btnLB)
-    buttons |= (1 << 4);
+    buttons |= (1 << 6); //LB
   if (notif.btnRB)
-    buttons |= (1 << 5);
-  // if (notif.btnLS)     buttons |= (1 << 6);
-  // if (notif.btnRS)     buttons |= (1 << 7);
+    buttons |= (1 << 7); //RB
   if (notif.trigLT > 0)
-    buttons |= (1 << 6); // LS
+    buttons |= (1 << 13); // LT
   if (notif.trigRT > 0)
-    buttons |= (1 << 7); // RS
-
-  if (notif.btnStart)
-    buttons |= (1 << 9);
+    buttons |= (1 << 14); // RT
   if (notif.btnSelect)
-    buttons |= (1 << 8);
+    buttons |= (1 << 10); // Select
+  if (notif.btnStart)
+    buttons |= (1 << 11); // Start
   if (notif.btnShare)
-    buttons |= (1 << 10);
+    buttons |= (1 << 12); // Share
   if (notif.btnXbox)
-    buttons |= (1 << 11);
+    buttons |= (1 << 2);  // Xbox
+  if (notif.btnLS)
+    buttons |= (1 << 13); // LS
+  if (notif.btnRS)
+    buttons |= (1 << 14); // RS
 
   report[0] = buttons & 0xFF;
   report[1] = (buttons >> 8) & 0xFF;
